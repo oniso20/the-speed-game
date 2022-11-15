@@ -1,0 +1,29 @@
+.circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 70vw;
+    height: auto;
+    padding: 2rem 0.4rem;
+}
+
+.circle {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    margin: 0.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.143);
+    background: rgba(128, 128, 128, 0.247);
+}
+
+.selected {
+    background: url(../images/virus1.png) no-repeat center/cover;
+    background-size: 80%;
+}
