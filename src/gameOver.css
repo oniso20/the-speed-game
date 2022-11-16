@@ -1,0 +1,36 @@
+.modal-container {
+    font-family: 'Press Start 2P';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+.modal small {
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 10px;
+}
+
+.modal small:hover {
+    color: brown;
+    text-shadow: 0 0 20px;
+}

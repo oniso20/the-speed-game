@@ -3,6 +3,7 @@ import "./App.css";
 import "./button.css";
 import Circle from "./Circle";
 import Button from "./Button";
+import GameOver from "./GameOver";
 
 const randomNum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,7 +16,7 @@ class App extends Component {
     pace: 1000,
     gameOver: false,
     gameOn: false,
-    rounds: 0,
+    rounds: 3,
     difficulty: 4,
   };
 
@@ -23,17 +24,24 @@ class App extends Component {
 
   clickHandler = (index) => {
     if (this.state.current !== index) {
+      this.setState({
+        rounds: this.state.rounds - 1,
+      });
+    } else {
+      this.setState({
+        score: this.state.score + 1,
+        rounds: this.state.rounds + 1,
+      });
+    }
+
+    if (this.state.rounds === 0) {
       this.stopHandler();
       return;
     }
-    this.setState({
-      score: this.state.score + 1,
-      rounds: 0,
-    });
   };
 
   nextCircle = () => {
-    if (this.state.rounds >= 3) {
+    if (this.state.rounds === 0) {
       this.stopHandler();
       return;
     }
@@ -47,7 +55,7 @@ class App extends Component {
     this.setState({
       current: nextActive,
       pace: this.state.pace * 0.95,
-      rounds: this.state.rounds + 1,
+      rounds: this.state.rounds - 1,
     });
 
     this.timer = setTimeout(this.nextCircle, this.state.pace);
@@ -55,7 +63,7 @@ class App extends Component {
 
   startHandler = () => {
     this.nextCircle();
-    console.log("game start");
+    this.setState({ gameOn: !this.state.gameOn });
   };
 
   stopHandler = () => {
@@ -63,13 +71,11 @@ class App extends Component {
     this.setState({
       gameOver: !this.state.gameOver,
     });
-    console.log("game stop");
   };
 
   closeHandler = () => {
     //this.setState({gameOver: !this.state.gameOver})
     window.location.reload();
-    console.log("game stop");
   };
 
   render() {
@@ -80,6 +86,9 @@ class App extends Component {
           <h3>
             Your score is <span>{this.state.score}</span>
           </h3>
+          <h4>
+            Available rounds: <span>{this.state.rounds}</span>
+          </h4>
         </div>
         <div className="circles">
           {Array.from(Array(this.state.difficulty)).map((_, index) => (
@@ -88,13 +97,23 @@ class App extends Component {
               key={index}
               id={index + 1}
               active={this.state.current === index}
+              gameOnStatus={this.state.gameOn}
             />
           ))}
         </div>
-        {/* <GameOver close={this.closeHandler} /> */}
+        {this.state.gameOver && (
+          <GameOver score={this.state.score} close={this.closeHandler} />
+        )}
         <div className="buttons">
-          <Button id="gameStart" start={this.startHandler} children={"Start"} />
-          <Button id="gameStop" stop={this.stopHandler} children={"Stop"} />
+          {!this.state.gameOn ? (
+            <Button
+              id="gameStart"
+              start={this.startHandler}
+              children={"Start"}
+            />
+          ) : (
+            <Button id="gameStop" stop={this.stopHandler} children={"Stop"} />
+          )}
         </div>
       </main>
     );

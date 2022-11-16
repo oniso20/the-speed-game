@@ -12,7 +12,7 @@
 
 .circle {
     display: flex;
-    cursor: pointer;
+    cursor: url(../images/vaccine1.png), pointer;
     justify-content: center;
     align-items: center;
     width: 8rem;
@@ -21,6 +21,7 @@
     margin: 0.6rem;
     border: 1px solid rgba(0, 0, 0, 0.143);
     background: rgba(128, 128, 128, 0.247);
+    pointer-events: none;
 }
 
 .selected {

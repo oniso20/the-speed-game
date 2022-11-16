@@ -4,7 +4,8 @@ import "./circle.css";
 const Circle = (props) => {
   return (
     <div
-      onClick={props.click}
+      onClick={props.gameOnStatus ? props.click : null}
+      style={{ pointerEvents: props.gameOnStatus ? "all" : "none" }}
       className={`circle ${props.active ? "selected" : ""}`}
     >
       <p>{props.id}</p>
