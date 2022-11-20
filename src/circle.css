@@ -4,27 +4,161 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border: 1px solid black;
     width: 70vw;
     height: auto;
     padding: 2rem 0.4rem;
 }
 
+
 .circle {
-    display: flex;
-    cursor: url(../images/vaccine1.png), pointer;
-    justify-content: center;
-    align-items: center;
-    width: 8rem;
-    height: 8rem;
+    width: 200px;
+    height: 200px;
+    background: rgba(68, 68, 68, 0.248);
+    animation: corner 3s;
     border-radius: 50%;
-    margin: 0.6rem;
-    border: 1px solid rgba(0, 0, 0, 0.143);
-    background: rgba(128, 128, 128, 0.247);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     pointer-events: none;
+    border: 3px solid goldenrod;
+    cursor: url(./assets/images/police-baton.png), pointer;
+    margin: 0.6rem;
+}
+
+@keyframes corner {
+    0% {
+        border-top-left-radius: 1% 50%;
+    }
+
+    12.5% {
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+
+    25% {
+        border-top-right-radius: 1% 50%;
+    }
+
+    25.001% {
+        border-top-right-radius: 50% 1%;
+    }
+
+    37.5% {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    50% {
+        border-bottom-right-radius: 50% 1%;
+    }
+
+    50.001% {
+        border-bottom-right-radius: 1% 50%;
+    }
+
+    62.5% {
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    75% {
+        border-bottom-left-radius: 1% 50%;
+    }
+
+    75.001% {
+        border-bottom-left-radius: 50% 1%;
+    }
+
+    87.5% {
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+    }
+
+    100% {
+        border-top-left-radius: 50% 1%;
+    }
+}
+
+
+
+
+
+
+/**
+ * ----------------------------------------
+ * animation vibrate
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes vibrate {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
 }
 
 .selected {
-    background: url(../images/virus1.png) no-repeat center/cover;
+    background: url(./assets/images/bank-thief.png) no-repeat center/cover;
     background-size: 80%;
+}
+
+.vibrate {
+    -webkit-animation: vibrate 0.3s linear infinite both;
+    animation: vibrate 0.3s linear infinite both;
 }

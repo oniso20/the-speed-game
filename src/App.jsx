@@ -5,6 +5,18 @@ import Circle from "./Circle";
 import Button from "./Button";
 import GameOver from "./GameOver";
 
+import hit from "./assets/sounds/hit-with-pipe.mp3";
+import gameOver from "./assets/sounds/game-over.mp3";
+import lowScore from "./assets/sounds/low-score-laugh.mp3";
+import themeSound from "./assets/sounds/pirates-of-the-caribbean-theme-song.mp3";
+import policeSiren from "./assets/sounds/police-siren.mp3";
+
+const click = new Audio(hit);
+const gameEnd = new Audio(gameOver);
+const thiefLaugh = new Audio(lowScore);
+const startSound = new Audio(themeSound);
+const siren = new Audio(policeSiren);
+
 const randomNum = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -16,7 +28,7 @@ class App extends Component {
     pace: 1000,
     gameOver: false,
     gameOn: false,
-    rounds: 3,
+    rounds: 6,
     difficulty: 4,
   };
 
@@ -24,12 +36,13 @@ class App extends Component {
 
   clickHandler = (index) => {
     if (this.state.current !== index) {
+      thiefLaugh.play();
       this.setState({
         rounds: this.state.rounds - 1,
       });
     } else {
       this.setState({
-        score: this.state.score + 1,
+        score: this.state.score + 2,
         rounds: this.state.rounds + 1,
       });
     }
@@ -62,12 +75,15 @@ class App extends Component {
   };
 
   startHandler = () => {
+    startSound.play();
     this.nextCircle();
     this.setState({ gameOn: !this.state.gameOn });
   };
 
   stopHandler = () => {
     clearTimeout(this.timer);
+    startSound.pause();
+    gameEnd.play();
     this.setState({
       gameOver: !this.state.gameOver,
     });

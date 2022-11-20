@@ -34,3 +34,12 @@
     color: brown;
     text-shadow: 0 0 20px;
 }
+
+.emotion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+    border: 1px solid black;
+}

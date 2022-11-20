@@ -5,11 +5,11 @@ const Circle = (props) => {
   return (
     <div
       onClick={props.gameOnStatus ? props.click : null}
-      style={{ pointerEvents: props.gameOnStatus ? "all" : "none" }}
-      className={`circle ${props.active ? "selected" : ""}`}
-    >
-      <p>{props.id}</p>
-    </div>
+      style={{
+        pointerEvents: props.gameOnStatus ? "all" : "none",
+      }}
+      className={`circle ${props.active ? "selected vibrate" : ""}`}
+    ></div>
   );
 };
 

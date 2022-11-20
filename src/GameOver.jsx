@@ -13,6 +13,15 @@ const GameOver = (props) => {
             props.score >= 10 ? "Good game" : "Too poor, try harder"
           }`}</span>
         </p>
+        <div
+          className="emotion"
+          style={{
+            background:
+              props.score >= 10
+                ? "url(https://media1.giphy.com/media/m9rMVyKactNK/giphy.gif) no-repeat center/cover"
+                : "url(https://media3.giphy.com/media/8rVh6kmGklEmQ/giphy.gif) no-repeat center/cover",
+          }}
+        ></div>
       </div>
     </div>
   );
