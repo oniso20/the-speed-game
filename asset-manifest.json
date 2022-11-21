@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/the-speed-game/static/css/main.65a2b29f.css",
+    "main.js": "/the-speed-game/static/js/main.24f05d12.js",
+    "static/media/pirates-of-the-caribbean-theme-song.mp3": "/the-speed-game/static/media/pirates-of-the-caribbean-theme-song.9ae5958215a8851602c4.mp3",
+    "static/media/Bank-img.png": "/the-speed-game/static/media/Bank-img.192b14f4da71c576f2b5.png",
+    "static/media/game-over.mp3": "/the-speed-game/static/media/game-over.f2a679fdaec74a512aed.mp3",
+    "static/media/bank-thief.png": "/the-speed-game/static/media/bank-thief.65325bdb762d8baa62b1.png",
+    "static/media/win-game.mp3": "/the-speed-game/static/media/win-game.12d2c3fd2079ee9adf87.mp3",
+    "static/media/low-score-laugh.mp3": "/the-speed-game/static/media/low-score-laugh.028874552ecb87ccee38.mp3",
+    "static/media/police-siren.mp3": "/the-speed-game/static/media/police-siren.22d21d06414621978ac6.mp3",
+    "static/media/hit-with-pipe.mp3": "/the-speed-game/static/media/hit-with-pipe.253eb82e312fc016cff7.mp3",
+    "index.html": "/the-speed-game/index.html",
+    "main.65a2b29f.css.map": "/the-speed-game/static/css/main.65a2b29f.css.map",
+    "main.24f05d12.js.map": "/the-speed-game/static/js/main.24f05d12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65a2b29f.css",
+    "static/js/main.24f05d12.js"
+  ]
+}
