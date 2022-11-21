@@ -10,7 +10,7 @@ const GameOver = (props) => {
         <p>
           You Score is: {props.score} --
           <span>{`${
-            props.score >= 10 ? "Good game" : "Too poor, try harder"
+            props.score >= 10 ? "Now who's laughing ..." : "You can't catch me"
           }`}</span>
         </p>
         <div
